@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_code: 1
+  stock_name: MyString
+  registered_year: 1
+  registered_month: 1
+  per: 1.5
+  pbr: 1.5
+  capital_adequacy_ratio: 1.5
+  last_year_sales: 1
+  this_year_sales: 1
+  next_year_sales: 1
+  last_year_sales_profit: 1
+  this_year_sales_profit: 1
+  next_year_sales_profit: 1
+  last_year_net_profit: 1
+  this_year_net_profit: 1
+  next_year_net_profit: 1
+  last_year_eps: 1.5
+  this_year_eps: 1.5
+  next_year_eps: 1.5
+  last_year_dividend: 1.5
+  this_year_dividend: 1.5
+  next_year_dividend: 1.5
+  this_year_dividend_yield: 1.5
+  comment: MyText
+
+two:
+  stock_code: 1
+  stock_name: MyString
+  registered_year: 1
+  registered_month: 1
+  per: 1.5
+  pbr: 1.5
+  capital_adequacy_ratio: 1.5
+  last_year_sales: 1
+  this_year_sales: 1
+  next_year_sales: 1
+  last_year_sales_profit: 1
+  this_year_sales_profit: 1
+  next_year_sales_profit: 1
+  last_year_net_profit: 1
+  this_year_net_profit: 1
+  next_year_net_profit: 1
+  last_year_eps: 1.5
+  this_year_eps: 1.5
+  next_year_eps: 1.5
+  last_year_dividend: 1.5
+  this_year_dividend: 1.5
+  next_year_dividend: 1.5
+  this_year_dividend_yield: 1.5
+  comment: MyText
