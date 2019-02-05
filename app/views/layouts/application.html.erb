@@ -21,6 +21,11 @@
         </div>
       </nav>
     </header>
+    <% if flash.notice.present? %>
+      <div>
+        <%= flash.notice %>
+      </div>
+    <% end %>
     <%= yield %>
     <footer class="page-footer orange">
       <div class="container">
