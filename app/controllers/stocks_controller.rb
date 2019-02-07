@@ -8,10 +8,13 @@ class StocksController < ApplicationController
   end
 
   def create
-    stock = Stock.new(stock_params)
-    # stock = Stock.new(stock_params)
-    stock.save!
-    redirect_to stocks_url, notice: "#{stock.stock_name}の株データを登録しました"
+    @stock = Stock.new(stock_params)
+
+    if @stock.save
+      redirect_to stocks_url, notice: "#{@stock.stock_name}の株データを登録しました"
+    else
+      render :new
+    end
   end
 
   def new

@@ -1,3 +1,13 @@
+<% if stock.errors.present? %>
+<div class="card-panel red lighten-4">
+  <span>
+    <% stock.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  </span>
+</div>
+<% end %>
+
 <%= form_with model: stock, local: true do |form| %>
   <div class="input-field">
     <label for="text">銘柄コード</label>
