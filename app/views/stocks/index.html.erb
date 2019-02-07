@@ -1,2 +1,22 @@
 <h3 class="header">データ登録</h3>
 <%= link_to('新規登録', new_stock_path, class: 'waves-effect waves-light btn') %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>銘柄名</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @stocks.each do |stock| %>
+        <tr>
+          <td><%= link_to(stock.stock_name, stock_path(stock)) %></td>
+          <td>
+            <%= link_to '編集', edit_stock_path(stock), class: 'waves-effect waves-light btn' %>
+            <%= link_to '削除', stock, method: :delete, data: { confirm: "株のデータ#{stock.stock_name}を削除します。よろしいですか？" }, class: 'waves-effect waves-light btn accent-3' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table><br>

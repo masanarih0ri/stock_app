@@ -1,9 +1,10 @@
 class StocksController < ApplicationController
   def index
-
+    @stocks = Stock.all
   end
 
   def show
+    @stock = Stock.find(params[:id])
   end
 
   def create
@@ -18,6 +19,19 @@ class StocksController < ApplicationController
   end
 
   def edit
+    @stock = Stock.find(params[:id])
+  end
+
+  def update
+    stock = Stock.find(params[:id])
+    stock.update!(stock_params)
+    redirect_to stocks_url, notice: "#{stock.stock_name}のデータを更新しました"
+  end
+
+  def destroy
+    stock = Stock.find(params[:id])
+    stock.destroy
+    redirect_to stocks_url, notice: "#{stock.stock_name}のデータを削除しました"
   end
 
   private

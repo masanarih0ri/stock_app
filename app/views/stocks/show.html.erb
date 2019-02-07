@@ -1,2 +1,109 @@
-<h1>Stocks#show</h1>
-<p>Find me in app/views/stocks/show.html.erb</p>
+<h1>株価データの詳細</h1>
+<table>
+  <tr>
+    <th>銘柄コード</th>
+    <td><%= @stock.stock_code %></td>
+  </tr>
+  <tr>
+    <th>銘柄名</th>
+    <td><%= @stock.stock_name %></td>
+  </tr>
+  <tr>
+    <th>登録した年度</th>
+    <td><%= @stock.registered_year %></td>
+  </tr>
+  <tr>
+    <th>登録した月</th>
+    <td><%= @stock.registered_month %></td>
+  </tr>
+  <tr>
+    <th>PER</th>
+    <td><%= @stock.per %></td>
+  </tr>
+  <tr>
+    <th>PBR</th>
+    <td><%= @stock.pbr %></td>
+  </tr>
+  <tr>
+    <th>自己資本比率</th>
+    <td><%= @stock.capital_adequacy_ratio %></td>
+  </tr>
+  <tr>
+    <th>前期売上</th>
+    <td><%= @stock.last_year_sales %></td>
+  </tr>
+  <tr>
+    <th>今期売上予測</th>
+    <td><%= @stock.this_year_sales %></td>
+  </tr>
+  <tr>
+    <th>来期売上予測</th>
+    <td><%= @stock.next_year_sales %></td>
+  </tr>
+  <tr>
+    <th>前期営業利益</th>
+    <td><%= @stock.last_year_sales_profit %></td>
+  </tr>
+  <tr>
+    <th>今期営業利益予測</th>
+    <td><%= @stock.this_year_sales_profit %></td>
+  </tr>
+  <tr>
+    <th>来期営業利益予測</th>
+    <td><%= @stock.next_year_sales_profit %></td>
+  </tr>
+  <tr>
+    <th>前期純利益</th>
+    <td><%= @stock.last_year_net_profit %></td>
+  </tr>
+  <tr>
+    <th>今期純利益予測</th>
+    <td><%= @stock.this_year_net_profit %></td>
+  </tr>
+  <tr>
+    <th>来期純利益予測</th>
+    <td><%= @stock.next_year_net_profit %></td>
+  </tr>
+  <tr>
+    <th>前期1株利益</th>
+    <td><%= @stock.last_year_eps %></td>
+  </tr>
+  <tr>
+    <th>今期1株利益</th>
+    <td><%= @stock.this_year_eps %></td>
+  </tr>
+  <tr>
+    <th>来期1株利益</th>
+    <td><%= @stock.next_year_eps %></td>
+  </tr>
+  <tr>
+    <th>前期配当</th>
+    <td><%= @stock.last_year_dividend %></td>
+  </tr>
+  <tr>
+    <th>今期配当</th>
+    <td><%= @stock.this_year_dividend %></td>
+  </tr>
+  <tr>
+    <th>来期配当</th>
+    <td><%= @stock.this_year_dividend %></td>
+  </tr>
+  <tr>
+    <th>配当利回り</th>
+    <td><%= @stock.this_year_dividend_yield %></td>
+  </tr>
+  <tr>
+    <th>コメント</th>
+    <td><%= simple_format(h(@stock.comment), {}, sanitize: false) %></td>
+  </tr>
+  <tr>
+    <th>登録日時</th>
+    <td><%= @stock.created_at %></td>
+  </tr>
+  <tr>
+    <th>更新日時</th>
+    <td><%= @stock.updated_at %></td>
+  </tr>
+</table><br>
+<%= link_to '編集', edit_stock_path, class: 'waves-effect waves-light btn' %>
+<%= link_to '削除', @stock, method: :delete, data: { confirm: "株のデータ#{@stock.stock_name}を削除します。よろしいですか？" }, class: 'waves-effect waves-light btn accent-3' %>

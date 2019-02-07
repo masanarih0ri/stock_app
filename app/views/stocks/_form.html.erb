@@ -1,0 +1,100 @@
+<%= form_with model: stock, local: true do |form| %>
+  <div class="input-field">
+    <label for="text">銘柄コード</label>
+    <%= form.number_field :stock_code, class: "validate", placeholder: "1234" %>
+  </div>
+  <div class="input-field">
+    <label for="text">銘柄名</label>
+    <%= form.text_field :stock_name, class: "validate", placeholder: "ソニー" %>
+  </div>
+  <div class="input-field">
+    <label for="text">登録する年度</label>
+    <%= form.number_field :registered_year, class: "validate", placeholder: "2018年9月度の場合 2018" %>
+  </div>
+  <div class="input-field">
+    <label for="text">登録する月</label>
+    <%= form.number_field :registered_month, class: "validate", placeholder: "2018年9月度の場合 9" %>
+  </div>
+  <div class="input-field">
+    <label for="text">PER</label>
+    <%= form.number_field :per, class: "validate", placeholder: "10.5", step: '0.01' %>
+  </div>
+  <div class="input-field">
+    <label for="text">PBR</label>
+    <%= form.number_field :pbr, class: "validate", placeholder: "2.34", step: '0.01' %>
+  </div>
+  <div class="input-field">
+    <label for="text">自己資本比率</label>
+    <%= form.number_field :capital_adequacy_ratio, class: "validate", placeholder: "55.5", step: '0.01' %>
+  </div>
+  <div class="input-field">
+    <label for="text">前期売上</label>
+    <%= form.number_field :last_year_sales, class: "validate", placeholder: "6000" %>
+  </div>
+  <div class="input-field">
+    <label for="text">今期売上予測</label>
+    <%= form.number_field :this_year_sales, class: "validate", placeholder: "7600" %>
+  </div>
+  <div class="input-field">
+    <label for="text">来期売上予測</label>
+    <%= form.number_field :next_year_sales, class: "validate", placeholder: "7000" %>
+  </div>
+  <div class="input-field">
+    <label for="text">前期営業利益</label>
+    <%= form.number_field :last_year_sales_profit, class: "validate", placeholder: "600" %>
+  </div>
+  <div class="input-field">
+    <label for="text">今期営業利益予測</label>
+    <%= form.number_field :this_year_sales_profit, class: "validate", placeholder: "900" %>
+  </div>
+  <div class="input-field">
+    <label for="text">来期営業利益予測</label>
+    <%= form.number_field :next_year_sales_profit, class: "validate", placeholder: "1000" %>
+  </div>
+  <div class="input-field">
+    <label for="text">前期純利益</label>
+    <%= form.number_field :last_year_net_profit, class: "validate", placeholder: "550" %>
+  </div>
+  <div class="input-field">
+    <label for="text">今期純利益予測</label>
+    <%= form.number_field :this_year_net_profit, class: "validate", placeholder: "500" %>
+  </div>
+  <div class="input-field">
+    <label for="text">来期純利益予測</label>
+    <%= form.number_field :next_year_net_profit, class: "validate", placeholder: "100" %>
+  </div>
+  <div class="input-field">
+    <label for="text">前期1株利益</label>
+    <%= form.number_field :last_year_eps, class: "validate", placeholder: "55.5", step: '0.01' %>
+  </div>
+  <div class="input-field">
+    <label for="text">今期1株利益</label>
+    <%= form.number_field :this_year_eps, class: "validate", placeholder: "55.5", step: '0.01' %>
+  </div>
+  <div class="input-field">
+    <label for="text">来期1株利益</label>
+    <%= form.number_field :next_year_eps, class: "validate", placeholder: "55.5", step: '0.01' %>
+  </div>
+  <div class="input-field">
+    <label for="text">前期配当</label>
+    <%= form.number_field :last_year_dividend, class: "validate", placeholder: "55.5", step: '0.01' %>
+  </div>
+  <div class="input-field">
+    <label for="text">今期配当</label>
+    <%= form.number_field :this_year_dividend, class: "validate", placeholder: "55.5", step: '0.01' %>
+  </div>
+  <div class="input-field">
+    <label for="text">来期配当</label>
+    <%= form.number_field :next_year_dividend, class: "validate", placeholder: "55.5", step: '0.01' %>
+  </div>
+  <div class="input-field">
+    <label for="text">配当利回り</label>
+    <%= form.number_field :this_year_dividend_yield, class: "validate", placeholder: "55.5", step: '0.01' %>
+  </div>
+  <div class="input-field">
+    <label for="text">コメント</label>
+    <%= form.text_area :comment, class: "validate", placeholder: "55.5", step: '0.01' %>
+  </div>
+  <%= form.submit nil, class: 'waves-effect waves-light btn'  %>
+
+<% end %>

@@ -1,2 +1,3 @@
-<h1>Stocks#edit</h1>
-<p>Find me in app/views/stocks/edit.html.erb</p>
+<h3>株データの編集</h3>
+<%= link_to('一覧', stocks_path, class: 'waves-effect waves-light btn') %>
+<%= render partial: 'form', locals: { stock: @stock }%>
