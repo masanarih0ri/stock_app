@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  # get '/', to: 'top#index'
+  namespace :admin do
+    resources :users
+  end
   root to: 'stocks#index'
   # /stocksのhttpメソッドを一括生成
   resources :stocks

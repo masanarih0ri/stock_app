@@ -1,0 +1,4 @@
+<h3>ユーザー編集</h3>
+<%= link_to '一覧', admin_users_path, class: 'waves-effect waves-light btn' %>
+
+<%= render partial: 'form', locals: { user: @user } %>

@@ -1,0 +1,26 @@
+<%= form_with model: [:admin, user], local: true do |form| %>
+  <div class="input-field">
+    <label for="text">名前</label>
+    <%= form.text_field :name, class: "validate" %>
+  </div>
+  <div class="input-field">
+    <label for="text">メールアドレス</label>
+    <%= form.text_field :email, class: "validate" %>
+  </div>
+  <div class="input-field">
+    <label for="admin" class="input_field_admin">
+      <%= form.check_box :admin ,class: 'check_box_adjust', id: 'admin' %>
+      　管理者権限
+    </label>
+  </div>
+  <div class="input-field">
+    <label for="text">パスワード</label>
+    <%= form.password_field :password, class: "validate" %>
+  </div>
+  <div class="input-field">
+    <label for="text">パスワード（確認）</label>
+    <%= form.password_field :password_confirmation, class: "validate" %>
+  </div>
+  <%= form.submit '登録する', class: 'waves-effect waves-light btn'  %>
+
+<% end %>

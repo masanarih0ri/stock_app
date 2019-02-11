@@ -1,0 +1,30 @@
+<h3>ユーザー登録</h3>
+<%= link_to('新規登録', stocks_path, class: 'waves-effect waves-light btn') %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= User.human_attribute_name(:name) %></th>
+      <th><%= User.human_attribute_name(:email) %></th>
+      <th><%= User.human_attribute_name(:admin) %></th>
+      <th><%= User.human_attribute_name(:created_at) %></th>
+      <th><%= User.human_attribute_name(:updated_at) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.name, [:admin, user] %></td>
+        <td><%= user.email %></td>
+        <td><%= user.admin? ? 'あり' : 'なし'%></td>
+        <td><%= user.created_at %></td>
+        <td><%= user.updated_at %></td>
+        <td>
+          <%= link_to '編集', edit_admin_user_path(user), class: 'waves-effect waves-light btn' %>
+          <%= link_to '削除', [:admin, user], method: :delete, data: { confirm: "ユーザー#{user.name}を削除します。よろしいですか？" }, class: 'waves-effect waves-light btn red accent-2' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
