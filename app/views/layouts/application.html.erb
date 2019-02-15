@@ -11,13 +11,25 @@
     <header>
       <nav class="light-blue lighten-1" role="navigation">
         <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-          <ul class="right hide-on-med-and-down">
+          <!-- <ul class="right hide-on-med-and-down">
             <li><a href="#">ログイン</a></li>
           </ul>
           <ul id="nav-mobile" class="sidenav">
             <li><a href="#">ログイン</a></li>
           </ul>
-          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
+          <ul class="right hide-on-med-and-down">
+            <% if current_user %>
+              <li><%= link_to '株データ一覧', stocks_path %></li>
+              <% if current_user.admin? %>
+                <li><%= link_to 'ユーザー一覧', admin_users_path %></li>
+              <% end %>
+              <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'ログイン', login_path %></li>
+            <% end %>
+          </ul>
+
         </div>
       </nav>
     </header>

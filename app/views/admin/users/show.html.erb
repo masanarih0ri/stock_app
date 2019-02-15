@@ -1,31 +1,27 @@
 <h3>ユーザーの詳細</h3>
-<%= link_to('新規登録', stocks_path, class: 'waves-effect waves-light btn') %>
+<%= link_to('新規登録', admin_users_path, class: 'waves-effect waves-light btn') %>
 
 <table>
   <tbody>
     <tr>
-      <th></th>
-      <td></td>
+      <th><%= User.human_attribute_name(:id) %></th>
+      <td><%= @user.id %></td>
     </tr>
     <tr>
-      <th></th>
-      <td></td>
+      <th><%= User.human_attribute_name(:name) %></th>
+      <td><%= @user.name %></td>
     </tr>
     <tr>
-      <th></th>
-      <td></td>
+      <th><%= User.human_attribute_name(:admin) %></th>
+      <td><%= @user.admin ? 'あり' : 'なし' %></td>
     </tr>
     <tr>
-      <th></th>
-      <td></td>
+      <th><%= User.human_attribute_name(:created_at) %></th>
+      <td><%= @user.created_at %></td>
     </tr>
     <tr>
-      <th></th>
-      <td></td>
-    </tr>
-    <tr>
-      <th></th>
-      <td></td>
+      <th><%= User.human_attribute_name(:updated_at) %></th>
+      <td><%= @user.updated_at %></td>
     </tr>
   </tbody>
 </table>
