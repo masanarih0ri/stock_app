@@ -14,7 +14,7 @@
     <%= form.number_field :stock_code, class: "validate", placeholder: "1234" %>
   </div>
   <div class="input-field">
-    <label for="text">銘柄名</label>
+    <%= form.label :stock_name, '銘柄名' %>
     <%= form.text_field :stock_name, class: "validate", placeholder: "ソニー" %>
   </div>
   <div class="input-field">
